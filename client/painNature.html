@@ -1,0 +1,58 @@
+<div data-role="page" id="painNature" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#painNature", "pageshow", function(inEvent) {
+            pageShowHandler("painnature");
+        });
+    </script>
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="painNaturePanel" data-theme="a">
+        <h2>Select Nature of Pain</h2>
+        <hr>
+        <p>Select the nature of your pain. You can update pain nature before final confirmation.</p>
+    </div>
+
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#painNaturePanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1>Pain Nature</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <div class="ui-grid-solo">
+            <div class="ui-block-a">
+                <form>
+                    <fieldset data-role="controlgroup">
+                        <legend>What is the nature of your pain?</legend>
+                        <input type="radio" name="pain-nature" data-theme="c" id="pain-nature-throbbing" value="Throbbing, Pounding or Pulsating">
+                        <label for="pain-nature-throbbing">Throbbing, Pounding or Pulsating</label>
+                        <input type="radio" name="pain-nature" data-theme="c" id="pain-nature-pressing" value="Pressing Pain or Dull Steady Ache">
+                        <label for="pain-nature-pressing">Pressing Pain or Dull Steady Ache</label>
+                        <input type="radio" name="pain-nature" data-theme="c" id="pain-nature-steady" value="Steady Sharp or Burning Ache">
+                        <label for="pain-nature-steady">Steady Sharp or Burning Ache</label>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-prefetch="true" id="painnature-back" data-icon="clock" class="ui-btn-icon-top" onclick="updatePainNatureData('headache')">Come Back Later</a></li>
+                <li><a href="#" data-prefetch="true" id="painnature-skip" class="ui-icon-arrow-r ui-btn-icon-top" onclick="updatePainNatureData('headache')">Skip to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

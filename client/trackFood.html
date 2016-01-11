@@ -1,0 +1,75 @@
+<div data-role="page" id="trackFood" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#trackFood", "pageshow", function(inEvent) {
+            pageShowHandler("trackfood");
+        });
+    </script>
+
+    <!--Info Panel-->
+    <div data-role="panel" data-position="right" data-display="overlay" id="foodPanel" data-theme="a">
+        <h2>Food Tracking</h2>
+        <hr>
+        <p style="font-size: 10pt;">Based on research, these are the foods that are found responsible for headaches. Track one or more of them on regular basis if you think these foods are affecting your headaches.</p>
+        <p style="font-size: 10pt;">Tracking time is set to current date and time by default. Change the date and time if required by tapping the date or time showing button.</p>
+    </div>
+
+    <!-- Header.-->
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-loader-background"></div>
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+        <h1>Track Food</h1>
+        <a href="#foodPanel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Settings</a>
+
+        <div data-role="navbar" id="foodDateTime">
+            <ul>
+                <li><a href="#" id="food-date" data-theme="c"></a></li>
+                <li><a href="#" id="food-time" data-theme="c"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <br />
+        <form>
+            <fieldset data-role="controlgroup">
+                <legend>What did you eat? Set food intake date and time above.</legend>
+                <input type="radio" name="food" id="aged-cheese" data-theme="c" value="Aged Cheese">
+                <label for="aged-cheese">Aged Cheese</label>
+                <input type="radio" name="food" id="chocolate" data-theme="c" value="Chocolate">
+                <label for="chocolate">Chocolate</label>
+                <input type="radio" name="food" id="citrus-fruit" data-theme="c" value="Citrus Fruit">
+                <label for="citrus-fruit">Citrus Fruit</label>
+                <input type="radio" name="food" id="cured-meat" data-theme="c" value="Cured Meat">
+                <label for="cured-meat">Cured Meat</label>
+                <input type="radio" name="food" id="nuts" data-theme="c" value="Nut">
+                <label for="nuts">Nuts</label>
+                <input type="radio" name="food" id="onions" data-theme="c" value="Onion">
+                <label for="onions">Onions</label>
+                <input type="radio" name="food" id="salty-food" data-theme="c" value="Salty Food">
+                <label for="salty-food">Salty Foods</label>
+                <input type="radio" name="food" id="msg" data-theme="c" value="MSG">
+                <label for="msg">MSG (Sodium Glutamate)</label>
+                <input type="radio" name="food" id="nutra-sweet" data-theme="c" value="NutraSweet">
+                <label for="nutra-sweet">NutraSweet</label>
+                <input type="radio" name="food" id="other" data-theme="c" value="Other">
+                <label for="other">Other Food</label>
+            </fieldset>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="trackActivity.html" id="food-not-btn" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top">Come Back Later</a></li>
+                <li><a href="#" id="food-skip-btn" data-prefetch="true" class="ui-icon-edit ui-btn-icon-top" onclick="saveFood('food')">Confirm</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>

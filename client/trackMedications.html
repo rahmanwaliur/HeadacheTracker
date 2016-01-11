@@ -1,0 +1,183 @@
+<div data-role="page" id="trackMedications" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#trackMedications", "pageshow", function(inEvent) {
+            pageShowHandler("trackmedications");
+        });
+    </script>
+
+    <script>
+        $(document).on('pagebeforeshow', '#trackMedications', function(event){
+
+            $('#sym-block').show();
+            $('#prev-block').hide();
+
+            $('#radio-med-type-symptomatic').on('change', function () {
+                $('#sym-block').show();
+                $('#prev-block').hide();
+            });
+
+            $('#radio-med-type-preventive').on('change', function () {
+                $('#prev-block').show();
+                $('#sym-block').hide();
+            });
+        });
+    </script>
+
+    <div data-role="popup" data-history="false" id="medQuantityPop" data-theme="c" data-dismissible="false">
+        <div role="main" class="ui-content">
+            <form id="med-quant">
+                <label for="med-quant">Specify medication quantity</label>
+                <input type="range" name="med-quantity" id="med-quantity" data-show-value="true" data-highlight="true" min="0" max="3" value="0">
+            </form>
+            <a href="#" id="med-ok" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a ui-btn-mini">OK</a>
+        </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="medicationSettingsPanel" data-theme="a">
+        <h2>Medication Tracker Settings</h2>
+        <hr />
+
+        <form>
+            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                <legend>Select Medication Type</legend>
+                <input type="radio" name="radio-med-type" id="radio-med-type-symptomatic" value="symp" checked="checked">
+                <label for="radio-med-type-symptomatic">Symptomatic</label>
+                <input type="radio" name="radio-med-type" id="radio-med-type-preventive" value="prev">
+                <label for="radio-med-type-preventive">Preventive</label>
+            </fieldset>
+        </form>
+
+        <p style="font-size: 10pt;">Tracking time is set to current date and time by default. Change the date and time if required by tapping the date or time showing button.</p>
+
+    </div>
+
+    <!-- Header.-->
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-loader-background"></div>
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+        <h1>Track Medications</h1>
+        <a href="#medicationSettingsPanel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Settings</a>
+
+        <div data-role="navbar" id="activeActivityList">
+            <ul>
+                <li><a href="#" id="med-date" data-theme="c"></a></li>
+                <li><a href="#" id="med-time" data-theme="c"></a></li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <!-- Page content. -->
+
+    <div data-role="content">
+        <div class="ui-corner-all custom-corners" id="sym-block">
+            <div class="ui-bar ui-bar-c">
+                <h3>Symptomatic Medication. Set medication date and time above.</h3>
+            </div>
+            <div class="ui-body ui-body-c">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a">
+                        <form name="Symptomatic">
+                            <fieldset data-role="controlgroup" data-mini="true">
+                                <input type="radio" name="medication-symp" id="almotriptan" data-theme="c" value="Almotriptan">
+                                <label for="almotriptan" style="font-size: 12px">Almotriptan</label>
+                                <input type="radio" name="medication-symp" id="eletriptan" data-theme="c" value="Eletriptan">
+                                <label for="eletriptan" style="font-size: 12px">Eletriptan</label>
+                                <input type="radio" name="medication-symp" id="frovatriptan" data-theme="c" value="Frovatriptan">
+                                <label for="frovatriptan" style="font-size: 12px">Frovatriptan</label>
+                                <input type="radio" name="medication-symp" id="naratriptan" data-theme="c" value="Naratriptan">
+                                <label for="Naratriptan" style="font-size: 12px">Naratriptan</label>
+                                <input type="radio" name="medication-symp" id="rizatriptan" data-theme="c" value="Rizatriptan">
+                                <label for="rizatriptan" style="font-size: 12px">Rizatriptan</label>
+                                <input type="radio" name="medication-symp" id="sumatriptan" data-theme="c" value="Sumatriptan">
+                                <label for="sumatriptan" style="font-size: 12px">Sumatriptan</label>
+                                <input type="radio" name="medication-symp" id="zolmitriptan" data-theme="c" value="Zolmitriptan">
+                                <label for="zolmitriptan" style="font-size: 12px">Zolmitriptan</label>
+                                <input type="radio" name="medication-symp" id="dihydroergotamine" data-theme="c" value="Dihydroergotamine">
+                                <label for="dihydroergotamine" style="font-size: 12px">Dihydroergotamine</label>
+                                <input type="radio" name="medication-symp" id="ergotamine" data-theme="c" value="Ergotamine">
+                                <label for="ergotamine" style="font-size: 12px">Ergotamine</label>
+                                <input type="radio" name="medication-symp" id="asa" data-theme="c" value="ASA">
+                                <label for="asa" style="font-size: 12px">ASA</label>
+                                <input type="radio" name="medication-symp" id="diclofenac_potassium" data-theme="c" value="Diclofenac potassium">
+                                <label for="diclofenac_potassium" style="font-size: 12px">Diclofenac potassium</label>
+                                <input type="radio" name="medication-symp" id="ibuprofen" data-theme="c" value="Ibuprofen">
+                                <label for="ibuprofen" style="font-size: 12px">Diclofenac potassium</label>
+                                <input type="radio" name="medication-symp" id="naproxen_sodium" data-theme="c" value="Naproxen sodium">
+                                <label for="naproxen_sodium" style="font-size: 12px">Naproxen sodium</label>
+                                <input type="radio" name="medication-symp" id="acetaminophen" data-theme="c" value="Acetaminophen">
+                                <label for="acetaminophen" style="font-size: 12px">Acetaminophen</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui-corner-all custom-corners" id="prev-block">
+            <div class="ui-bar ui-bar-c">
+                <h3>Preventive Medication</h3>
+            </div>
+            <div class="ui-body ui-body-c">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a">
+                        <form name="Preventive">
+                            <fieldset data-role="controlgroup" data-mini="true">
+                                <input type="radio" name="medication-prev" id="divalproex_sodium" data-theme="c" value="Divalproex sodium">
+                                <label for="divalproex_sodium" style="font-size: 12px">Divalproex sodium 250 mg BID (500–1500 mg/d)</label>
+                                <input type="radio" name="medication-prev" id="topiramate" data-theme="c" value="topiramate">
+                                <label for="topiramate" style="font-size: 12px">Topiramate 250 mg BID (500–1500 mg/d)</label>
+                                <input type="radio" name="medication-prev" id="gabapentin" data-theme="c" value="Gabapentin">
+                                <label for="gabapentin" style="font-size: 12px">Gabapentin 300 mg BID (900–3600 mg/d)</label>
+                                <input type="radio" name="medication-prev" id="amitriptyline" data-theme="c" value="Amitriptyline">
+                                <label for="amitriptyline" style="font-size: 12px">Amitriptyline 10 mg QHS (20–50 mg QHS)</label>
+                                <input type="radio" name="medication-prev" id="venlafaxine" data-theme="c" value="Venlafaxine">
+                                <label for="venlafaxine" style="font-size: 12px">Venlafaxine 37.5 mg OD (75–150 mg OD)</label>
+                                <input type="radio" name="medication-prev" id="propranolol" data-theme="c" value="Propranolol">
+                                <label for="propranolol" style="font-size: 12px">Propranolol 20 mg BID (40–160 mg/d)</label>
+                                <input type="radio" name="medication-prev" id="nadolol" data-theme="c" value="Nadolol">
+                                <label for="nadolol" style="font-size: 12px">Nadolol 80 mg OD (80–240 mg OD)</label>
+                                <input type="radio" name="medication-prev" id="flunarizine" data-theme="c" value="Flunarizine">
+                                <label for="flunarizine" style="font-size: 12px">Flunarizine 5 mg OD (5–10 mg OD)</label>
+                                <input type="radio" name="medication-prev" id="verapamil" data-theme="c" value="Verapamil">
+                                <label for="verapamil" style="font-size: 12px">Verapamil 40 mg TID (40–80 mg TID)</label>
+                                <input type="radio" name="medication-prev" id="lisinopril" data-theme="c" value="Lisinopril">
+                                <label for="lisinopril" style="font-size: 12px">Lisinopril 20 mg OD</label>
+                                <input type="radio" name="medication-prev" id="candesartan" data-theme="c" value="Candesartan">
+                                <label for="candesartan" style="font-size: 12px">Candesartan 10 mg QHS (20–50 mg QHS)</label>
+                                <input type="radio" name="medication-prev" id="pizotifen" data-theme="c" value="Pizotifen">
+                                <label for="pizotifen" style="font-size: 12px">Pizotifen 0.5 mg TID (1.5–3 mg/d)</label>
+                                <input type="radio" name="medication-prev" id="riboflavin" data-theme="c" value="Riboflavin">
+                                <label for="riboflavin" style="font-size: 12px">Riboflavin 10 mg QHS (20–50 mg QHS)</label>
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="popup" data-history="false" id="quantityError" data-theme="c" data-dismissible="false">
+            <div role="main" class="ui-content">
+                <p>Please specify medication quantity</p>
+                <a href="#" id="error-ok" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a ui-btn-mini" data-rel="back">OK</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" id="activity-not-btn" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top">Come Back Later</a></li>
+                <li><a href="#" id="med-skip-btn" data-prefetch="true" class="ui-icon-edit ui-btn-icon-top" onclick="saveMedication('medication')">Confirm</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</div>

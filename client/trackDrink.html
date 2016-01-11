@@ -1,0 +1,64 @@
+<div data-role="page" id="trackDrink" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#trackDrink", "pageshow", function(inEvent) {
+            pageShowHandler("trackdrink");
+        });
+    </script>
+
+    <!--Info Panel-->
+    <div data-role="panel" data-position="right" data-display="overlay" id="drinkPanel" data-theme="a">
+        <h2>Tracking Drink</h2>
+        <hr>
+        <p style="font-size: 10pt;">These are the drinks that can affect headaches. It might be due to excessive drinking (i.e. red wine) or lack of drinking (i.e. water).</p>
+        <p style="font-size: 10pt;">You are encouraged to track the drinks that you think are affecting your headaches.</p>
+        <p style="font-size: 10pt;">Tracking time is set to current date and time by default. Change the date and time if required by tapping the date or time showing button.</p>
+    </div>
+
+    <!-- Header.-->
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-loader-background"></div>
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+        <h1>Track Drink</h1>
+        <a href="#drinkPanel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Settings</a>
+
+        <div data-role="navbar" id="drinkDateTime">
+            <ul>
+                <li><a href="#" id="drink-date" data-theme="c"></a></li>
+                <li><a href="#" id="drink-time" data-theme="c"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <br />
+        <form>
+            <fieldset data-role="controlgroup">
+                <legend>What did you drink? Set drink date and time above.</legend>
+                <input type="radio" name="drink" id="coffee" data-theme="c" value="Coffee">
+                <label for="coffee">Coffee</label>
+                <input type="radio" name="drink" id="red-wine" data-theme="c" value="Red Wine">
+                <label for="red-wine">Red Wine</label>
+                <input type="radio" name="drink" id="beer" data-theme="c" value="Beer">
+                <label for="beer">Beer</label>
+                <input type="radio" name="drink" id="water" data-theme="c" value="Water">
+                <label for="water">Water</label>
+            </fieldset>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="trackActivity.html" id="activity-not-btn" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top">Come Back Later</a></li>
+                <li><a href="#" id="drink-skip-btn" data-prefetch="true" class="ui-icon-edit ui-btn-icon-top" onclick="saveDrink('drink')">Confirm</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>

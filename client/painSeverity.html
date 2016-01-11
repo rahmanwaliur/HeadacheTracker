@@ -1,0 +1,132 @@
+<div data-role="page" id="painSeverity" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#painSeverity", "pageshow", function(inEvent) {
+            pageShowHandler("painseverity");
+        });
+    </script>
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="painScalePanel" data-theme="a">
+        <h2>Set Headache Severity</h2>
+        <hr>
+        <p>You may track severity maximum three times a day at different times. A new severity block will appear each time you come back here. Tap "Set Time" first to set tracking time and enable severity input.</p>
+
+        <p>Pain Scale:</p>
+        <hr>
+        <p>10 : Extreme Pain - Unable to function; worst pain imaginable; bed rest likely required.</p>
+        <hr>
+        <p>9 : Very Severe Pain - May be unable to speak or think clearly; not able to function; likely lying down or sleeping.</p>
+        <hr>
+        <p>8 : More severe pain; prohibits your activities (i.e. work, child care, self-care, etc); likely lying down or sleeping.</p>
+        <hr>
+        <p>7 : Severe pain; pain begins to affect ability to concentrate and very difficult to continue with daily activities.</p>
+        <hr>
+        <p>6 : Moderate-severe pain; limits your activities; some activities may be less of a priority.</p>
+        <hr>
+        <p>5 : Moderate pain; you feel you need to slow down; pain is more distracting.</p>
+        <hr>
+        <p>4 : Mild-moderate pain; usual activities become more difficult.</p>
+        <hr>
+        <p>3 : Distracting pain; can continue with usual activities; but may be more difficult.</p>
+        <hr>
+        <p>2 : Mild pain; can continue with daily activities; but may be more difficult.</p>
+        <hr>
+        <p>1 : Very mild pain; able to carry on with usual activities with no distraction.</p>
+        <hr>
+        <p>0 : Pain free; no pain at all; no headache.</p>
+
+
+    </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#painScalePanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1>Pain Severity</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="relative" id="page-content">
+        <div class="ui-loader-background"></div> <br />
+
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" id="severity-one-text">Severity Today At</div>
+                    <div class="ui-block-b" id="severity-one-input">
+                        <input type="text" name="severity-time" id="severity-one-time" data-mini="true" placeholder="Set Time" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-body ui-body-a">
+                <form id="one">
+                    <label for="one" class="ui-hidden-accessible">Pain Severity at Headache Start:</label>
+                    <input type="range" name="severity-one" id="severity-one" disabled="disabled" data-show-value="true" data-highlight="true" min="0" max="10" value="0">
+                </form>
+            </div>
+        </div>
+        <br /> <br />
+
+        <div class="ui-corner-all custom-corners" id="severity-second">
+            <div class="ui-bar ui-bar-a">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" id="severity-two-text">Severity Today At</div>
+                    <div class="ui-block-b" id="severity-two-input">
+                        <input type="text" name="severity-time" readonly id="severity-two-time" data-mini="true" placeholder="Set Time First" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-body ui-body-a">
+                <form id="two">
+                    <label for="one" class="ui-hidden-accessible">Pain Severity at Headache Start:</label>
+                    <input type="range" name="severity-one" id="severity-two" disabled="disabled" data-show-value="true" data-highlight="true" min="0" max="10" value="0">
+                </form>
+            </div>
+        </div>
+
+        <br /> <br />
+        <div class="ui-corner-all custom-corners" id="severity-third">
+            <div class="ui-bar ui-bar-a">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" id="severity-three-text">Severity Today At</div>
+                    <div class="ui-block-b" id="severity-three-input">
+                        <input type="text" name="severity-time" readonly id="severity-three-time" data-mini="true" placeholder="Set Time" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-body ui-body-a">
+                <form id="three">
+                    <label for="one" class="ui-hidden-accessible">Pain Severity at Headache Start:</label>
+                    <input type="range" name="severity-one" id="severity-three" disabled="disabled" data-show-value="true" data-highlight="true" min="0" max="10" value="0">
+                </form>
+            </div>
+        </div>
+
+        <br/><br/>
+        <div class="ui-grid-solo">
+            <div class="ui-block-a user-minutes" id="severity-text">Please specify pain severity.</div>
+        </div>
+
+        <div class="ui-grid-solo">
+            <div class="ui-block-a user-minutes" id="time-text"></div>
+        </div>
+    </div>
+
+    <!-- Dialog -->
+
+
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-prefetch="true" id="severity-back" data-icon="clock" class="ui-btn-icon-top" onclick="updateSeverityData('headache')">Come Back Later</a></li>
+                <li><a href="#" data-prefetch="true" id="severity-skip" class="ui-icon-arrow-r ui-btn-icon-top" onclick="updateSeverityData('headache')">Go to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

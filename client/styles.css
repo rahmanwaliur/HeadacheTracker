@@ -1,0 +1,245 @@
+/* home page button icons css */
+.ui-icon-medication:after {
+    background : url(img/medkit.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.ui-icon-analysis:after {
+    background : url(img/analytics.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.ui-icon-headache:after {
+    background : url(img/headache-alt.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.ui-icon-recordactivity:after {
+    background : url(img/edit.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+#start-label{
+    text-align: center;
+    font-weight: bold;
+}
+
+#end-date, #end-time{
+    background-color: gray;
+    text-align: center;
+    font-size: 14px;
+}
+
+#end-date{
+    border-right: 1px solid #000000;
+}
+
+#end-label{
+    text-align: center;
+    font-weight: bold;
+}
+
+.header-block {
+    text-align: center;
+    background-color: lightgray;
+}
+.time-block{
+    text-align: center;
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+.date-block{
+    text-align: center;
+    background-color: lightgray;
+}
+
+.just-started, .ten-minutes, .twenty-minutes, .thirty-minutes, .user-minutes{
+    text-align: center;
+}
+
+#start-justStarted, #start-tenMinutes, #start-twentyMinutes, #start-thirtyMinutes, #start-userMinutes, #end-justStarted, #end-tenMinutes, #end-twentyMinutes, #end-thirtyMinutes, #end-userMinutes{
+    height: 35px;
+    width: 35px;
+}
+
+#start-just-started-text, #end-just-started-text{
+    font-weight: bold;
+}
+
+.ui-grid-a, .ui-block-a, .ui-block-b{
+    text-align: center;
+}
+
+#start-date-time, #end-date-time{
+    text-align: center;
+    background-color: ghostwhite;
+}
+
+#pain-severity-one, #pain-severity-two, #pain-severity-three{
+    text-align: right;
+}
+
+#severity-one-text, #severity-two-text, #severity-three-text{
+    text-align: center;
+    /*height: 48.453125px;
+    line-height: 48.453125px; */
+    font-size: 10pt;
+    height: 35px;
+    line-height: 35px;
+}
+
+#severity-one-input, #severity-two-input, #severity-three-input{
+    height: 35px;
+    width: 135px;
+    margin-left: 15px;
+}
+
+#severity-one-time, #severity-two-time, #severity-three-time{
+    text-align: center;
+    font-weight: bold;
+    font-size: 10pt;
+    height: 15px;
+    min-height: 20px;
+}
+
+.create-slider, .delete-slider{
+    text-align: center;
+}
+
+
+/* Custom indentations are needed because the length of custom labels differs from
+   the length of the standard labels
+.custom-size-flipswitch.ui-flipswitch .ui-btn.ui-flipswitch-on {
+    text-indent: -5.9em;
+}
+.custom-size-flipswitch.ui-flipswitch .ui-flipswitch-off {
+    text-indent: 0.5em;
+}
+/* Custom widths are needed because the length of custom labels differs from
+   the length of the standard labels
+.custom-size-flipswitch.ui-flipswitch {
+    width: 8.875em;
+}
+.custom-size-flipswitch.ui-flipswitch.ui-flipswitch-active {
+    padding-left: 7em;
+    width: 1.875em;
+}
+@media (min-width: 28em) {
+        /*Repeated from rule .ui-flipswitch above
+     .ui-field-contain > label + .custom-size-flipswitch.ui-flipswitch {
+        width: 1.875em;
+    }
+}
+
+*/
+
+#tmj, #sinus, #cluster, #tension, #migraine, #neck{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+#tmj-blk, #sinus-blk, #cluster-blk, #tension-blk, #migraine-blk, #neck-blk{
+    text-align: center;
+}
+
+.ui-icon-home-icon:after {
+    background : url(img/home-icon.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.ui-icon-work-icon:after {
+    background : url(img/office-icon.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.ui-icon-explore:after {
+    background : url(img/explore.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.ui-icon-compare:after {
+    background : url(img/compare.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.ui-icon-review:after {
+    background : url(img/review.png) no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+}
+
+.app-theme-none{
+    border: 0px;
+    outline: none;
+}
+
+#home-block, #office-block, #school-block, #park-block, #transit-block, #party-block, #stadium-block, #shopping-block,#left-block, #severity-img-block, #disability-img-block, #painloc-img-block, #painnature-img-block, #symptom-img-block, #userloc-img-block, #note-img-block{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+#at-home-text, #at-work-text, #location-header, #at-school-text, #at-park-text, #at-transit-text, #at-party-text, #at-stadium-text, #at-shopping-text{
+    text-align: center;
+}
+
+.image-caption{
+    font-size: 7pt;
+    font-weight: bold;
+
+}
+
+.ui-mobile .ui-page .ui-slider-input, .ui-mobile .ui-dialog .ui-slider-input {
+    display : none;
+}
+
+.ui-mobile .ui-page .ui-slider-track, .ui-mobile .ui-dialog .ui-slider-track {
+    margin-left: 20px;
+}
+
+.custom-corners .ui-bar {
+    /*  -webkit-border-top-left-radius: inherit;
+      border-top-left-radius: inherit;
+      -webkit-border-top-right-radius: inherit;
+      border-top-right-radius: inherit; */
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.custom-corners .ui-body {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    /*
+     border-top-width: 0;
+      -webkit-border-bottom-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+      -webkit-border-bottom-right-radius: inherit;
+      border-bottom-right-radius: inherit; */
+
+}
+
+#summary-header h1{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.custom-control{
+    background-color: #ffffff;
+}

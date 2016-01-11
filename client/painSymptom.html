@@ -1,0 +1,66 @@
+<div data-role="page" id="painSymptom" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#painSymptom", "pageshow", function(inEvent) {
+            pageShowHandler("painsymptom");
+        });
+    </script>
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="painSymptomPanel" data-theme="a">
+        <h2>Select Symptoms</h2>
+        <hr>
+        <p>Select one or more symptoms that you are experiencing during headache. You can update pain symptoms before final confirmation.</p>
+    </div>
+
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#painSymptomPanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1>Pain Symptoms</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <form>
+            <fieldset data-role="controlgroup">
+                <legend>Select Pain Symptoms:</legend>
+                <input type="checkbox" name="no-symptom" id="no-symptom" data-theme="c">
+                <label for="no-symptom">No Symptom</label>
+                <input type="checkbox" name="light-sensitivity" id="light-sensitivity" data-theme="c">
+                <label for="light-sensitivity">Sensitive to Light</label>
+                <input type="checkbox" name="sound-sensitivity" id="sound-sensitivity" data-theme="c">
+                <label for="sound-sensitivity">Sensitive to Sound</label>
+                <input type="checkbox" name="nasal-congestion" id="nasal-congestion" data-theme="c">
+                <label for="nasal-congestion">Nasal Congestion</label>
+                <input type="checkbox" name="nausea-condition" id="nausea-condition" data-theme="c">
+                <label for="nausea-condition">Nausea</label>
+                <input type="checkbox" name="depressed-mood" id="depressed-mood" data-theme="c">
+                <label for="depressed-mood">Depressed Mood</label>
+                <input type="checkbox" name="smell-sensitivity" id="smell-sensitivity" data-theme="c">
+                <label for="smell-sensitivity">Sensitive to Smell</label>
+                <input type="checkbox" name="feel-anxious" id="feel-anxious" data-theme="c">
+                <label for="feel-anxious">Feeling Anxious</label>
+                <input type="checkbox" name="feel-anxious" id="other-symptom" data-theme="c">
+                <label for="other-symptom">Other</label>
+            </fieldset>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" id="painsym-back" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top" onclick="updateSymptomData('headache')">Come Back later</a></li>
+                <li><a href="#" id="painsym-skip" data-prefetch="true" class="ui-icon-arrow-r ui-btn-icon-top" onclick="updateSymptomData('headache')">Skip to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

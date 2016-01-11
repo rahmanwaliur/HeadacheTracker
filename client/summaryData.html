@@ -1,0 +1,299 @@
+
+<div data-role="page" id="summaryData" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#summaryData", "pageshow", function(inEvent) {
+            pageShowHandler("summarydata");
+
+        });
+
+    </script>
+
+
+
+    <!-- Settings Panel -->
+        <div data-role="panel" data-position="right" data-display="overlay" id="summaryPanel" data-theme="a">
+            <h2>Review Headache Entry</h2>
+            <hr>
+            <p>You must specify headache end time before confirmation. You can tap on headache end time to update it.</p>
+            <p>You can also tap other parameters to update them if required.</p>
+        </div>
+
+
+    <div data-role="popup" data-history="false" id="popupDialog" data-theme="a" data-dismissible="false">
+        <div data-role="header" data-theme="a">
+            <h1>End Time</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <h3 class="ui-title">Tap to record the time when your headache ended.</h3>
+            <p>Cannot proceed without headache end time.</p>
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">OK</a>
+        </div>
+        <div data-role="footer" data-theme="a">
+            <h3>Thanks</h3>
+        </div>
+    </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed" data-theme="a" id="summary-header">
+        <div class="ui-loader-background"></div>
+        <a href="#summaryPanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1></h1>
+        <!-- <a href="#settingsPanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext">Settings</a> -->
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <div class="ui-grid-c">
+            <div class="ui-block-a" id="left-block">
+                <img id="duration-img" src="img/time-duration.png" class="app-theme-none">
+                <figcaption class="image-caption">duration</figcaption>
+            </div>
+            <div class="ui-block-b" id="start-block">
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="start-header"></div>
+                </div>
+
+                <div class="ui-grid-solo" >
+                    <div class="ui-block-a" id="headache-start-time"></div>
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="headache-start-date"></div>
+                </div>
+
+            </div>
+            <div class="ui-block-c" id="end-block">
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="end-header"></div>
+                </div>
+
+                <div class="ui-grid-solo" >
+                    <div class="ui-block-a" id="headache-end-time"></div>
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="headache-end-date"></div>
+                </div>
+
+
+            </div>
+            <div class="ui-block-d" id="duration-block">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="duration-header"></div>
+                </div>
+
+                <div class="ui-grid-solo" >
+                    <div class="ui-block-a" id="duration-number"></div>
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="duration-unit"></div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="ui-grid-c">
+            <div class="ui-block-a" id="severity-img-block">
+                <img id="severity-img" src="img/seveirty.png" class="app-theme-none">
+                <figcaption class="image-caption">severity</figcaption>
+            </div>
+
+            <div class="ui-block-b" id="severity-one-block">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="severity-time-one"></div>
+                </div>
+
+                <div class="ui-grid-solo" >
+                    <div class="ui-block-a" id="severity-one-value"></div>
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="severity-one-date"></div>
+                </div>
+
+            </div>
+
+            <div class="ui-block-c" id="severity-two-block">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="severity-time-two"></div>
+                </div>
+
+                <div class="ui-grid-solo" >
+                    <div class="ui-block-a" id="severity-two-value"></div>
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="severity-two-date"></div>
+                </div>
+            </div>
+
+            <div class="ui-block-c" id="severity-three-block">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="severity-time-three"></div>
+                </div>
+
+                <div class="ui-grid-solo" >
+                    <div class="ui-block-a" id="severity-three-value"></div>
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="severity-three-date"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="ui-grid-c">
+            <div class="ui-block-a" id="disability-img-block">
+                <img id="disability-img" src="img/disability.png" class="app-theme-none">
+                <figcaption class="image-caption">disability</figcaption>
+            </div>
+
+
+            <div class="ui-block-b" id="disability-one-block">
+
+            </div>
+
+            <div class="ui-block-c" id="disability-two-block">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="disability-level-text"></div>
+                </div>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="disability-value"></div>
+                </div>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="disability-record-time">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-block-d" id="disability-three-block">
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="ui-grid-c">
+            <div class="ui-block-a" id="painloc-img-block">
+                <img id="painloc-img" src="img/painlocation.png" class="app-theme-none">
+                <figcaption class="image-caption">pain location</figcaption>
+            </div>
+
+            <div class="ui-block-b" id="painloc-one-block">
+
+
+            </div>
+
+            <div class="ui-block-c" id="painloc-two-block">
+            </div>
+
+            <div class="ui-block-c" id="painloc-three-block">
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="ui-grid-c">
+            <div class="ui-block-a" id="painnature-img-block">
+                <img id="painnature-img" src="img/painnature.png" class="app-theme-none">
+                <figcaption class="image-caption">pain nature</figcaption>
+            </div>
+
+            <div class="ui-block-b" id="painnature-one-block">
+            </div>
+
+            <div class="ui-block-c" id="painnature-two-block">
+            </div>
+
+            <div class="ui-block-c" id="painnature-three-block">
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="ui-grid-c">
+            <div class="ui-block-a" id="symptom-img-block">
+                <img id="symptom-img" src="img/symptom.png" class="app-theme-none">
+                <figcaption class="image-caption">symptom</figcaption>
+            </div>
+
+            <div class="ui-block-b" id="symptom-one-block">
+            </div>
+
+            <div class="ui-block-c" id="symptom-two-block">
+            </div>
+
+            <div class="ui-block-c" id="symptom-three-block">
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="ui-grid-c">
+            <div class="ui-block-a" id="userloc-img-block">
+                <img id="userloc-img" src="img/userloc.png" class="app-theme-none">
+                <figcaption class="image-caption">location</figcaption>
+            </div>
+
+            <div class="ui-block-b" id="userloc-one-block">
+            </div>
+
+            <div class="ui-block-c" id="userloc-two-block">
+            </div>
+
+            <div class="ui-block-c" id="userloc-three-block">
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="ui-grid-c">
+            <div class="ui-block-a" id="note-img-block">
+                <img id="note-img" src="img/mynote.png" class="app-theme-none">
+                <figcaption class="image-caption">note</figcaption>
+            </div>
+
+            <div class="ui-block-b" id="note-one-block">
+            </div>
+
+            <div class="ui-block-c" id="note-two-block">
+            </div>
+
+            <div class="ui-block-c" id="note-three-block">
+            </div>
+
+        </div>
+
+
+    </div>
+
+        <!-- Footer -->
+    <div data-role="footer" data-position="fixed" id="test">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" id="summary-back" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top" onclick="deleteHeadacheEntry('headache')">Delete</a></li>
+                <li><a href="#" id="summary-save" data-prefetch="true"  data-icon="edit" class="ui-btn-icon-top">Confirm</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,138 @@
+<div data-role="page" id="reviewData" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#reviewData", "pageshow", function(inEvent) {
+            pageShowHandler("reviewdata");
+        });
+    </script>
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="reviewPanel" data-theme="a">
+        <p>What to review?</p>
+        <hr>
+        <p style="font-size: 10pt;">Here you can find trends of your headache related parameters that you have tracked over time.</p>
+
+    </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#reviewPanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <a href="index.html" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-left">Home</a>
+        <h1>Review Headache</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed" id="page-content">
+        <div class="ui-loader-background"></div>
+
+        <!-- <div id="no-data-text">
+             <p>There is not data to show. Please come back later</p>
+         </div>-->
+
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a" style="text-align: center">
+                <h4>Headache Start Times</h4>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div id="start-time-pie" style="height:300px;"></div>
+            </div>
+        </div>
+
+        <br>
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a" style="text-align: center">
+                <h4>Headache Duration</h4>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div id="duration-bar" style="height:300px;"></div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a" style="text-align: center">
+                <h4>Headache Severity</h4>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div id="severity-bar" style="height:300px;"></div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a" style="text-align: center">
+                <h4>Headache Disability</h4>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div id="disability-bar" style="height:300px;"></div>
+            </div>
+        </div>
+
+        <br>
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a" style="text-align: center">
+                <h4>Pain Location</h4>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div id="pain-location-pie" style="height:300px;"></div>
+            </div>
+        </div>
+
+        <br>
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a" style="text-align: center">
+                <h4>Pain Nature</h4>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div id="pain-nature-pie" style="height:300px;"></div>
+            </div>
+        </div>
+        <br>
+
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a" style="text-align: center">
+                <h4>Pain Symptoms</h4>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div id="pain-symptom-pie" style="height:300px;"></div>
+            </div>
+        </div>
+        <br>
+
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a" style="text-align: center">
+                <h4>Location during Headaches</h4>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div id="user-location-pie" style="height:300px;"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <!-- Dialog -->
+
+
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="analyzeHeadache.html" data-prefetch="true" id="review" data-icon="clock" class="ui-btn-icon-top">Come Back Later</a></li>
+                <li><a href="compareData.html" data-prefetch="true" id="compare" class="ui-icon-arrow-r ui-btn-icon-top">Go to Compare</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

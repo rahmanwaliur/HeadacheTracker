@@ -1,0 +1,76 @@
+<div data-role="page" id="trackExercise" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#trackExercise", "pageshow", function(inEvent) {
+            pageShowHandler("trackexercise");
+        });
+    </script>
+
+    <!--Info Panel-->
+    <div data-role="panel" data-position="right" data-display="overlay" id="exercisePanel" data-theme="a">
+        <h2>Tracking Exercise</h2>
+        <hr>
+        <p style="font-size: 10pt;">Exercise can trigger headaches sometimes. If you think you are having headaches due to exercise you should track your exercises.</p>
+        <p style="font-size: 10pt;">Track exercise type and exercise status when you track your exercise.</p>
+        <p style="font-size: 10pt;">Tracking time is set to current date and time by default. Change the date and time if required by tapping the date or time showing button.</p>
+    </div>
+
+    <!-- Header.-->
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-loader-background"></div>
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+        <h1>Track Exercise</h1>
+        <a href="#exercisePanel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Settings</a>
+
+        <div data-role="navbar" id="drinkDateTime">
+            <ul>
+                <li><a href="#" id="exercise-date" data-theme="c"></a></li>
+                <li><a href="#" id="exercise-time" data-theme="c"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <br />
+        <form>
+            <fieldset data-role="controlgroup">
+                <legend>What did you exercise? Set exercise date and time above.</legend>
+                <input type="radio" name="exercise-name" id="exercise-aerobic" data-theme="c" value="Aerobic Exercise">
+                <label for="exercise-aerobic">Aerobic Exercise</label>
+                <input type="radio" name="exercise-name" id="exercise-anaerobic" data-theme="c" value="Anaerobic Exercise">
+                <label for="exercise-anaerobic">Anaerobic Exercise</label>
+                <input type="radio" name="exercise-name" id="exercise-flexibility" data-theme="c" value="Flexibility Exercise">
+                <label for="exercise-flexibility">Flexibility Exercise</label>
+            </fieldset>
+        </form>
+
+        <br />
+
+        <form>
+            <fieldset data-role="controlgroup">
+                <legend>What is the status of exercise?</legend>
+                <input type="radio" name="exercise-status" id="exercise-started" data-theme="c" value=" Started">
+                <label for="exercise-started">Just Started</label>
+                <input type="radio" name="exercise-status" id="exercise-ongoing" data-theme="c" value=" Ongoing">
+                <label for="exercise-ongoing">Ongoing</label>
+                <input type="radio" name="exercise-status" id="exercise-finished" data-theme="c" value=" Finished">
+                <label for="exercise-finished">Just Finished</label>
+            </fieldset>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="trackActivity.html" id="activity-not-btn" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top">Come Back Later</a></li>
+                <li><a href="#" id="exercise-skip-btn" data-prefetch="true" class="ui-icon-edit ui-btn-icon-top" onclick="saveExercise('exercise')">Confirm</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>

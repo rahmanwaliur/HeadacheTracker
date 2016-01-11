@@ -1,0 +1,38 @@
+<div data-role="page" id="painNote" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#painNote", "pageshow", function(inEvent) {
+            pageShowHandler("painnote");
+        });
+    </script>
+
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1>Important Note</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <form>
+            <label for="headachenote">Add a Note</label>
+            <textarea name="headachenote" id="headachenote"></textarea>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" id="note-back" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top" onclick="updateUserNoteData('headache')">Come Back Later</a></li>
+                <li><a href="#" id="note-skip" data-prefetch="true" class="ui-icon-arrow-r ui-btn-icon-top" onclick="updateUserNoteData('headache')">Skip to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

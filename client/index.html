@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="jq/headachetrackertheme.css">
+    <link rel="stylesheet" href="jq/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" href="jq/jquery.mobile.structure-1.4.5.css">
+
+    <!--<link rel="stylesheet" href="jq/jquery.mobile-1.4.5.min.css">-->
+    <!--<link rel="stylesheet" href="jq/plugins/mobiscroll.custom-2.14.4.min.css">-->
+
+    <link rel="stylesheet" href="styles.css">
+    <!--<link rel="stylesheet" href="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.css" />-->
+
+
+    <script type="text/javascript" src="jq/jquery-1.11.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jquery.jqplot.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.barRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.canvasTextRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.pieRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.enhancedLegendRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.pointLabels.min.js"></script>
+    <script language="javascript" type="text/javascript" src="jq/plugins/jqplot.highlighter.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="jq/plugins/jquery.jqplot.css" />
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+
+
+    <!-- Note: main.js must come before JQM to set defaults properly. -->
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="jq/jquery.mobile-1.4.5.min.js"></script>
+
+    <script language="javascript" type="text/javascript" src="jq/vis.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jq/vis.min.css" />
+
+    <!--<script src="https://rawgithub.com/jquery/jquery-ui/1-10-stable/ui/jquery.ui.datepicker.js"></script>
+    <script src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.js"></script> -->
+
+    <!-- Mobiscroll -->
+    <link rel="stylesheet" href="jq/plugins/mobiscroll.custom-2.15.0.css">
+    <script type="text/javascript" src="jq/plugins/mobiscroll.custom-2.15.0.js"></script>
+
+    <!-- Calendar -->
+    <link rel='stylesheet' href='jq/plugins/fullcalendar.css' />
+    <script src='jq/plugins/moment.min.js'></script>
+    <script src='jq/plugins/fullcalendar.js'></script>
+    <script src='jq/plugins/en-ca.js'></script>
+
+
+
+    <title></title>
+</head>
+<body>
+
+<!-- ================================================================== -->
+<!-- HOME PAGE                                                          -->
+<!-- ================================================================== -->
+
+    <div data-role="page" id="homepage" data-theme="a">
+
+
+        <div data-role="popup" data-history="false" data-dismissible="false" id="popupLogin" data-theme="a" class="ui-corner-all">
+            <form>
+                <div style="padding:10px 20px;">
+                    <h3>Please sign in</h3>
+                    <label for="um" class="ui-hidden-accessible">User ID:</label>
+                    <input type="text" name="user" id="um" value="" placeholder="mobile no (last 4 digits)" data-theme="a">
+                    <label for="pw" class="ui-hidden-accessible">Password:</label>
+                    <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+                    <button type="submit" id="login-submit" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check" onclick="validateUser('user')">Sign in</button>
+                </div>
+            </form>
+        </div>
+
+        <!--Info Panel-->
+        <div data-role="panel" data-position="right" data-display="overlay" id="homePanel" data-theme="a">
+            <h2>Important Info</h2>
+            <hr>
+            <p style="font-size: 10pt;"><strong>Headaches:</strong> Tap 'Headaches' button to record a new headache or update an ongoing headache. Although you can but you don't need to finish headache entry in one go. Come back anytime you want to update the entry.</p>
+            <p style="font-size: 10pt;"><strong>Activities:</strong> You can track your foods, drinks, exercise, sleep, stress and menstruation cycle. Track any of these 'Activities' or events according to your need to find trends or patterns about how these factors are affecting your headaches.</p>
+            <p style="font-size: 10pt;"><strong>Medications:</strong> Track symptomatic and/or preventive 'Medications' that you intake.</p>
+            <p style="font-size: 10pt;"><strong>Insight:</strong> Under 'Analyze' you can find trends and patterns of your headaches and how different triggers are affecting your headaches.</p>
+
+        </div>
+
+        <!-- Header. -->
+        <div data-role="header" id="custom-header" data-position="fixed" data-theme="a">
+            <div class="ui-loader-background"></div>
+           <a data-theme="a" href="#homePanel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+            <h1 style="color: white">Headache Tracker</h1>
+            <!--<button data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-power ui-btn-icon-notext">Exit</button> -->
+        </div>
+
+        <!-- Page content. -->
+        <div data-role="content" class="ui-content">
+            <div class="ui-loader-background"></div>
+
+            <div class="ui-grid-solo">
+                <div class="ui-block-a" id="ongoing">
+                    <p></p>
+                </div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a" id="unfinished">
+                    <p></p>
+                </div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a" id="login-welcome">
+                    <p></p>
+                </div>
+            </div>
+
+            <!--<div class="ui-corner-all custom-corners">
+                <div class="ui-body ui-body-a">
+                    <div id="severity-trend" style="height:300px;"></div>
+                </div>
+            </div>-->
+
+
+
+        </div>
+
+        <!-- Footer -->
+        <div data-role="footer" data-position="fixed" data-theme="a">
+            <div class="ui-loader-background"></div>
+            <div data-role="navbar" data-grid="c"> <!--  class="cssNavBar" -->
+                <ul>
+                    <li><a href="startTime.html" id="index-start-btn" data-prefetch="true" data-icon="headache" onclick="createHeadacheObject('headache')">Headaches</a></li>
+                    <li><a href="trackActivity.html" id="index-activity-btn" data-prefetch="true" data-icon="recordactivity">Activities</a></li>
+                    <li><a href="trackMedications.html" id="index-med-btn"  data-prefetch="true" data-icon="medication">Medications</a></li>
+                    <li><a href="analyzeHeadache.html" id="index-analyze-btn" data-prefetch="true" data-icon="analysis">Analyze</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ================================================================== -->
+<!-- INFO DIALOG                                                        -->
+<!-- ================================================================== -->
+<div data-role="dialog" id="infoDialog" data-close-btn="none">
+    <div data-role="header">
+        <h1 id="infoDialogHeader"></h1>
+    </div>
+    <div data-role="content" id="infoDialogContent"></div>
+    <div data-role="footer" class="cssInfoDialogButtons">
+        <a href="javascript:void(0);" data-rel="back" data-role="button">Ok</a>
+    </div>
+</div>
+
+
+</body>
+</html>

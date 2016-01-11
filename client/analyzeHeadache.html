@@ -1,0 +1,137 @@
+<div data-role="page" id="analyzeHeadache" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#analyzeHeadache", "pageshow", function(inEvent) {
+            pageShowHandler("analyzeheadache");
+        });
+    </script>
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="analyzePanel" data-theme="a">
+        <p>What to analyze?</p>
+        <hr>
+        <p style="font-size: 10pt;"><strong>Review:</strong> Tap 'Review' to see headache patterns and trends.</p>
+        <p style="font-size: 10pt;"><strong>Compare:</strong> Tap 'Compare' to compare impact of different triggers on your headaches.</p>
+        <p style="font-size: 10pt;"><strong>Explore:</strong> Tap 'Explore' to see what went wrong on a headache day.</p>
+
+    </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#analyzePanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <a href="index.html" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-left">Home</a>
+        <h1>Analyze Headache</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="relative" id="page-content" style="font-size: 9pt; font-weight: bold;">
+        <div class="ui-loader-background"></div>
+
+        <!--<div class="ui-grid-solo">
+            <div class="ui-block-a">
+                <p>Headache Tracking Progress</p>
+            </div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="headache-label">Headaches:</div>
+            <div class="ui-block-b" id="number-of-headaches"></div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="food-label">Food Tracking:</div>
+            <div class="ui-block-b" id="number-of-foods"></div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="drink-label">Drink Tracking:</div>
+            <div class="ui-block-b" id="number-of-drinks"></div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="exercise-label">Exercise Tracking:</div>
+            <div class="ui-block-b" id="number-of-exercises"></div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="sleep-label">Sleep Tracking:</div>
+            <div class="ui-block-b" id="number-of-sleeps"></div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="stress-label">Stress Tracking:</div>
+            <div class="ui-block-b" id="number-of-stresses"></div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="mens-label">Menstruation Tracking:</div>
+            <div class="ui-block-b" id="number-of-mens"></div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="medication-label">Medication Tracking:</div>
+            <div class="ui-block-b" id="number-of-medications"></div>
+        </div>
+        <hr>-->
+
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="review-text-above">
+                <p>Do you know trends and patterns of your headaches?</p>
+            </div>
+
+        </div>
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="explore-text-above">
+                <p>Do you want to know what might have triggered your headache on a particular day?</p>
+            </div>
+
+        </div>
+
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="review-swipe-viz" style="height: 300px;">
+
+            </div>
+        </div>
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="explore-swipe-viz" style="height: 300px;">
+                <img id="explore-static" src="img/explore-trigger.png" class="app-theme-none">
+            </div>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <img id="left" src="img/left.png" class="app-theme-none" align="left">
+            </div>
+            <div class="ui-block-b">
+                <img id="right" src="img/right.png" class="app-theme-none" align="right">
+            </div>
+        </div>
+
+        <br />
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="review-text-down">
+                <p>Tap 'Review' to learn more about your headache trends.</p>
+            </div>
+
+        </div>
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="explore-text-down">
+                <p>Tap 'Explore' to learn more about headache Trigger on a particular day.</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- Dialog -->
+
+
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="reviewData.html" data-prefetch="true" id="review" data-icon="review" class="ui-btn-icon-top">Review</a></li>
+                <li><a href="compareData.html" data-prefetch="true" id="compare" data-icon="compare" class="ui-btn-icon-top">Compare</a></li>
+                <li><a href="exploreData.html" data-prefetch="true" id="explore" data-icon="explore" class="ui-btn-icon-top">Explore</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

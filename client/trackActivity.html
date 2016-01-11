@@ -1,0 +1,94 @@
+<div data-role="page" id="trackActivity" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#trackActivity", "pageshow", function(inEvent) {
+            pageShowHandler("trackactivity");
+        });
+    </script>
+
+    <!-- Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="activityPanel" data-theme="a">
+        <h2>Activity Tracking</h2>
+        <hr />
+        <p style="font-size: 10pt;">Select anything that you would like to track on a regular basis. You are encouraged to track only the factors that you think are affecting your headaches.</p>
+        <p style="font-size: 10pt;">For each activity or event tracking you should adjust time and date according to your need. Date time navigation bars are configurable options just under page heading.</p>
+    </div>
+
+    <!-- Header.-->
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-loader-background"></div>
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+        <h1>Track Activities</h1>
+        <a href="#activityPanel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Settings</a>
+    </div>
+    <!-- Page Content -->
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="activity-header"><p>What would you like to track right now?</p></div>
+        </div>
+
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="food-block">
+                <img id="food-icon" src="img/food.png" class="app-theme-none">
+            </div>
+            <div class="ui-block-b" id="drink-block">
+                <img id="drink-icon" src="img/drink.png" class="app-theme-none">
+            </div>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="food-text">Food</div>
+            <div class="ui-block-b" id="drink-text">Drink</div>
+        </div>
+
+        <br/><br />
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="exercise-block">
+                <img id="exercise-icon" src="img/exercise.png" class="app-theme-none">
+            </div>
+            <div class="ui-block-b" id="sleep-block">
+                <img id="sleep-icon" src="img/sleep.png" class="app-theme-none">
+            </div>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="exercise-text">Exercise</div>
+            <div class="ui-block-b" id="sleep-text">Sleep</div>
+        </div>
+
+        <br /> <br />
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="stress-block">
+                <img id="stress-icon" src="img/stress.png" class="app-theme-none">
+            </div>
+            <div class="ui-block-b" id="period-block">
+                <img id="period-icon" src="img/period.png" class="app-theme-none">
+            </div>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="stress-text">Stress</div>
+            <div class="ui-block-b" id="period-text">Menstruation</div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" id="activity-not-btn" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top">Come Back Later</a></li>
+                <li><a href="#" id="activity-skip-btn" data-prefetch="true" class="ui-icon-arrow-r ui-btn-icon-top">Go to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>

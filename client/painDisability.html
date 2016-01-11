@@ -1,0 +1,71 @@
+<div data-role="page" id="painDisability" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#painDisability", "pageshow", function(inEvent) {
+            pageShowHandler("paindisability");
+        });
+    </script>
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="disabilityScalePanel" data-theme="a">
+        <h2>Set Headache Disability</h2>
+        <hr>
+        <p>Select disability level for the entire day. You can update disability level before final confirmation.</p>
+    </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#disabilityScalePanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1>Disability Level</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed">
+        <br/>
+
+        <div class="ui-body ui-body-a ui-corner-all" id="disability-content">
+            <p>Disability Level 0 : No problem at all to carry out activities.</p>
+        </div>
+
+        <br />
+
+        <div class="ui-grid-solo">
+            <div class="ui-block-a">
+                <form>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <p>Disability Level for the Day:</p>
+                        <input type="radio" name="disability-range" id="disability-range-0" value="0">
+                        <label for="disability-range-0">Zero</label>
+                        <input type="radio" name="disability-range" id="disability-range-1" value="1">
+                        <label for="disability-range-1">One</label>
+                        <input type="radio" name="disability-range" id="disability-range-2" value="2">
+                        <label for="disability-range-2">Two</label>
+                        <input type="radio" name="disability-range" id="disability-range-3" value="3">
+                        <label for="disability-range-3">Three</label>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+
+        <br/><br/>
+        <div class="ui-grid-solo">
+            <div class="ui-block-a user-minutes" id="disability-text">Please specify disability for today.</div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" id="paindis-back" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top" onclick="updateDisabilityData('headache')">Come Back Later</a></li>
+                <li><a href="#" id="paindis-skip" data-prefetch="true" class="ui-icon-arrow-r ui-btn-icon-top" onclick="updateDisabilityData('headache')">Go to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,194 @@
+<div data-role="page" id="activityList" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#activityList", "pageshow", function(inEvent) {
+            pageShowHandler("activitylist");
+        });
+    </script>
+
+
+    <!--<script>
+        $(document).on('pagebeforeshow', '#activityList', function(event){
+
+            $('#sleeprecord').hide();
+            $('#exerciserecord').hide();
+            $('#stressrecord').hide();
+            $('#coffeerecord').hide();
+
+            $('div[data-role="navbar"] ul li a#sleepduration').on('click', function () {
+                //alert("div E clicked");
+                $('#sleeprecord').show();
+                $('#exerciserecord').hide();
+                $('#stressrecord').hide();
+                $('#coffeerecord').hide();
+
+            });
+
+            $('div[data-role="navbar"] ul li a#exercisework').on('click', function () {
+                //alert("div E clicked");
+                $('#sleeprecord').hide();
+                $('#exerciserecord').show();
+                $('#stressrecord').hide();
+                $('#coffeerecord').hide();
+
+            });
+
+            $('div[data-role="navbar"] ul li a#stresslevel').on('click', function () {
+                //alert("div E clicked");
+                $('#sleeprecord').hide();
+                $('#exerciserecord').hide();
+                $('#stressrecord').show();
+                $('#coffeerecord').hide();
+
+            });
+
+            $('div[data-role="navbar"] ul li a#coffeeintake').on('click', function () {
+                //alert("div E clicked");
+                $('#sleeprecord').hide();
+                $('#exerciserecord').hide();
+                $('#stressrecord').hide();
+                $('#coffeerecord').show();
+
+            });
+        });
+    </script>-->
+
+    <!-- Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="activitySettingsPanel" data-theme="a">
+        <h2>Activity Tracker Settings</h2>
+        <hr />
+        <form>
+            <label for="flip-sleep">Track Sleep</label>
+            <select name="flip-sleep" id="flip-sleep" data-role="flipswitch" data-mini="true">
+                <option value="off">Off</option>
+                <option selected="" value="on">On</option>
+            </select>
+
+            <label for="flip-exercise">Track Exercise</label>
+            <select name="flip-exercise" id="flip-exercise" data-role="flipswitch" data-mini="true">
+                <option value="off">Off</option>
+                <option selected="" value="on">On</option>
+            </select>
+
+            <label for="flip-stress">Track Stress</label>
+            <select name="flip-stress" id="flip-stress" data-role="flipswitch" data-mini="true">
+                <option value="off">Off</option>
+                <option value="on">On</option>
+            </select>
+
+            <label for="flip-coffee">Track Coffee</label>
+            <select name="flip-coffee" id="flip-coffee" data-role="flipswitch" data-mini="true">
+                <option value="off">Off</option>
+                <option value="on">On</option>
+            </select>
+        </form>
+    </div>
+
+    <!-- Header.-->
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-loader-background"></div>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Home</a>
+        <h1>Track Activities</h1>
+        <a href="#activitySettingsPanel" class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext">Settings</a>
+
+        <div data-role="navbar" id="activeActivityList">
+            <ul>
+                <li><a href="#" id="activity-date" data-theme="c"></a></li>
+                <li><a href="#" id="activity-time" data-theme="c"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page content. -->
+
+    <div data-role="content">
+        <!--<div id="sleeprecord">
+           <h2> Here is sleep record.</h2>
+        </div>
+
+        <div id="exerciserecord">
+            <h2> Here is exercise record.</h2>
+        </div>
+
+        <div id="stressrecord">
+            <h2> Here is stress record.</h2>
+        </div>
+
+        <div id="coffeerecord">
+            <h2> Here is coffee record.</h2>
+        </div>-->
+
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="activity-header" style="text-align: center">
+                <br />Tap on activity name</div>
+        </div>
+
+        <div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+            <div data-role="collapsible">
+                <h3>Last Night Sleep</h3>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="sleep-data">
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                                <input type="radio" name="radio-sleep" id="radio-sleep-good" value="good">
+                                <label for="radio-sleep-good">Good</label>
+                                <input type="radio" name="radio-sleep" id="radio-sleep-not-good" value="notgood">
+                                <label for="radio-sleep-not-good">Not Good</label>
+                                <input type="radio" name="radio-sleep" id="radio-sleep-average" value="average">
+                                <label for="radio-sleep-average">Average</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible">
+                <h3>Exercise</h3>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="exercise-type">
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                                <input type="radio" name="radio-exercise-type" id="radio-aerobic" value="aerobic">
+                                <label for="radio-aerobic">Aerobic</label>
+                                <input type="radio" name="radio-exercise-type" id="radio-not-aerobic" value="notaerobic">
+                                <label for="radio-not-aerobic">Anaerobic</label>
+                                <input type="radio" name="radio-exercise-type" id="radio-both" value="bothaerobicnotaerobic">
+                                <label for="radio-both">Both Types</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a" id="exercise-duration">
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                                <input type="radio" name="radio-exercise-duration" id="radio-exercise-start" value="aerobic">
+                                <label for="radio-exercise-start">Just Started</label>
+                                <input type="radio" name="radio-exercise-duration" id="radio-exercise-end" value="notaerobic">
+                                <label for="radio-exercise-end">Just Ended</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible">
+                <h3>Coffee</h3>
+                <p>Final bit of collapsible content.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" id="activity-not-btn" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top">Not Now</a></li>
+                <li><a href="#" id="activity-skip-btn" data-prefetch="true" class="ui-icon-arrow-r ui-btn-icon-top">Skip This</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

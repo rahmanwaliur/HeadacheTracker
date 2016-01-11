@@ -1,0 +1,61 @@
+<div data-role="page" id="trackSleep" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#trackSleep", "pageshow", function(inEvent) {
+            pageShowHandler("tracksleep");
+        });
+    </script>
+
+    <!--Info Panel-->
+    <div data-role="panel" data-position="right" data-display="overlay" id="sleepPanel" data-theme="a">
+        <h2>Tracking Sleep</h2>
+        <hr>
+        <p style="font-size: 10pt;">Sleep Deprivation can often trigger headaches. If you think you are having headaches due to sleep deprivation you should track your daily sleep.</p>
+        <p style="font-size: 10pt;">Tracking time is set to current date and time by default. Change the date and time if required by tapping the date or time showing button. This date time refers to data collection time, not your sleeping time.</p>
+    </div>
+
+    <!-- Header.-->
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-loader-background"></div>
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+        <h1>Track Sleep</h1>
+        <a href="#sleepPanel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext">Settings</a>
+
+        <div data-role="navbar" id="drinkDateTime">
+            <ul>
+                <li><a href="#" id="sleep-date" data-theme="c"></a></li>
+                <li><a href="#" id="sleep-time" data-theme="c"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <br />
+        <form>
+            <fieldset data-role="controlgroup">
+                <legend>How well did you sleep last night? No need to set date and time for last night sleep.</legend>
+                <input type="radio" name="sleep" id="sound-sleep" data-theme="c" value="Sound Sleep">
+                <label for="sound-sleep">Sound Sleep</label>
+                <input type="radio" name="sleep" id="interrupted-sleep" data-theme="c" value="Interrupted Sleep">
+                <label for="interrupted-sleep">Interrupted Sleep</label>
+                <input type="radio" name="sleep" id="sleep-less" data-theme="c" value="Lack of Sleep">
+                <label for="sleep-less">Lack of Sleep</label>
+            </fieldset>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="trackActivity.html" id="activity-not-btn" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top">Come Back Later</a></li>
+                <li><a href="#" id="sleep-skip-btn" data-prefetch="true" class="ui-icon-edit ui-btn-icon-top" onclick="saveSleep('sleep')">Confirm</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>

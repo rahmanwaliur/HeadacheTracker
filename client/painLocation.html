@@ -1,0 +1,81 @@
+<div data-role="page" id="painLocation" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#painLocation", "pageshow", function(inEvent) {
+            pageShowHandler("painlocation");
+        });
+    </script>
+
+    <script>
+
+    </script>
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="painLocationPanel" data-theme="a">
+        <h2>Select Pain Location</h2>
+        <hr>
+        <p>Select one or more areas where you are having pain during headache. You can update pain location before final confirmation.</p>
+    </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#painLocationPanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1>Pain Location</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <!--
+        <svg width="300" height="364">
+            <image xlink:href="img/upper_right_edited.png" id="upper_right" x="0px" y="0px" height="57px" width="150px" onclick="imgClk('Upper_right')"/>
+            <image xlink:href="img/forehead_right_edited.png" x="0px" y="58px" height="60px" width="150px" onclick="imgClk('Forehead_right')"/>
+            <image xlink:href="img/eye_right_edited.png" x="0px" y="119px" height="62px" width="150px" onclick="imgClk('Eye_Right')"/>
+            <image xlink:href="img/cheek_right_edited.png" x="0px" y="182px" height="65px" width="150px" onclick="imgClk('Cheek_Right')"/>
+            <image xlink:href="img/jaw_right_edited.png" x="0px" y="248px" height="115px" width="150px" onclick="imgClk('Jaw_Right')"/>
+        </svg>
+        -->
+
+        <form id="pain-location">
+            <div class="ui-grid-a">
+                <div class="ui-block-a ui-corner-all" id="tmj-blk">
+                    <img id="tmj" src="img/tmj.png">
+                    <p>Pain is at temples, in front of ears.</p>
+                </div>
+                <div class="ui-block-b ui-corner-all" id="sinus-blk">
+                    <img id="sinus" src="img/sinus.png">
+                    <p>Pain is in the sinus areas.</p>
+                </div>
+                <div class="ui-block-a ui-corner-all" id="cluster-blk">
+                    <img id="cluster" src="img/cluster.png">
+                    <p>Pain is in and around one eye (Right/Left).</p>
+                </div>
+                <div class="ui-block-b ui-corner-all" id="tension-blk">
+                    <img id="tension" src="img/tension.png">
+                    <p>Pain is like a band squeezing the head.</p>
+                </div>
+                <div class="ui-block-a ui-corner-all" id="migraine-blk">
+                    <img id="migraine" src="img/migraine.png">
+                    <p>Pain on one side of the head.</p>
+                </div>
+                <div class="ui-block-b ui-corner-all" id="neck-blk">
+                    <img id="neck" src="img/neck.png">
+                    <p>Pain is at the top and/or back of head.</p>
+                </div>
+            </div>
+        </form>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar" data-grid="a" class="cssNavBar">
+            <ul>
+                <li><a href="#" data-prefetch="true" id="painloc-back" data-icon="clock" class="ui-btn-icon-top" onclick="updatePainLocationData('headache')">Come Back Later</a></li>
+                <li><a href="#" data-prefetch="true" id="painloc-skip" class="ui-icon-arrow-r ui-btn-icon-top" onclick="updatePainLocationData('headache')">Skip to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

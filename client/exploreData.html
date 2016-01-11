@@ -1,0 +1,129 @@
+<div data-role="page" id="exploreData" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#exploreData", "pageshow", function(inEvent) {
+            pageShowHandler("exploredata");
+        });
+    </script>
+
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="explorePanel" data-theme="a">
+        <p>What to explore?</p>
+        <hr>
+        <p style="font-size: 10pt;">Here you can see all your headache days on a calendar view. You can tap any particular headache to see tracked activities, events and weather condition on that particular day to intuitively find out what went wrong on that day.</p>
+
+    </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#explorePanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <a href="index.html" data-theme="a" id="back-to-home" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext ui-btn-left">Home</a>
+        <a href="#" data-theme="a" id="back-to-calendar" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-left">Back</a>
+        <h1>Explore Headache</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed" id="page-content">
+        <div class="ui-loader-background"></div>
+
+        <div id="calendar"></div>
+
+        <div class="ui-corner-all custom-corners" id="late-segment">
+            <div class="ui-bar ui-bar-a" id="late-time-segment" style="text-align: center; background-color: gray">
+                <h4></h4>
+            </div>
+            <div class="ui-body ui-body-a">
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" id="late-time-block"></div>
+                    <div class="ui-block-b" id="late-event-block"></div>
+                </div>
+
+            </div>
+            <div class="ui-bar ui-bar-a" id="late-headache-status" style="text-align: center; background-color: gray">
+                <h4></h4>
+            </div>
+        </div>
+
+        <div class="ui-corner-all custom-corners" id="morning-segment">
+            <div class="ui-bar ui-bar-a" id="morning-time-segment" style="text-align: center; background-color: gray">
+                <h4></h4>
+            </div>
+            <div class="ui-body ui-body-a">
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" id="morning-time-block"></div>
+                    <div class="ui-block-b" id="morning-event-block"></div>
+                </div>
+
+            </div>
+            <div class="ui-bar ui-bar-a" id="morning-headache-status" style="text-align: center; background-color: gray">
+                <h4></h4>
+            </div>
+        </div>
+
+        <div class="ui-corner-all custom-corners" id="afternoon-segment">
+            <div class="ui-bar ui-bar-a" id="afternoon-time-segment" style="text-align: center; background-color: gray">
+                <h4></h4>
+            </div>
+            <div class="ui-body ui-body-a">
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" id="afternoon-time-block"></div>
+                    <div class="ui-block-b" id="afternoon-event-block"></div>
+                </div>
+
+            </div>
+            <div class="ui-bar ui-bar-a" id="afternoon-headache-status" style="text-align: center; background-color: gray">
+                <h4></h4>
+            </div>
+        </div>
+
+        <div class="ui-corner-all custom-corners" id="evening-segment">
+            <div class="ui-bar ui-bar-a" id="evening-time-segment" style="text-align: center; background-color: gray">
+                <h4></h4>
+            </div>
+            <div class="ui-body ui-body-a">
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" id="evening-time-block"></div>
+                    <div class="ui-block-b" id="evening-event-block"></div>
+                </div>
+
+            </div>
+            <div class="ui-bar ui-bar-a" id="evening-headache-status" style="text-align: center; background-color: gray">
+                <h4></h4>
+            </div>
+        </div>
+
+
+
+        <!--<div id="food-timeline"></div>
+        <div id="drink-timeline"></div>
+        <div id="exercise-timeline"></div>
+        <div id="sleep-timeline"></div>
+
+        <div id="daily-explore"></div>
+-->
+
+    </div>
+
+    <!-- Dialog -->
+
+
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="analyzeHeadache.html" data-prefetch="true" id="review" data-icon="clock" class="ui-btn-icon-top">Come Back Later</a></li>
+                <li><a href="reviewData.html" data-prefetch="true" id="compare" class="ui-icon-arrow-r ui-btn-icon-top">Go to Review</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

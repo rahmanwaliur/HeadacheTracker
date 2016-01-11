@@ -1,0 +1,108 @@
+<div data-role="page" id="userLocation" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#userLocation", "pageshow", function(inEvent) {
+            pageShowHandler("userlocation");
+        });
+    </script>
+
+    <!--Settings Panel -->
+    <div data-role="panel" data-position="right" data-display="overlay" id="userLocationPanel" data-theme="a">
+        <h2>Select Your Location</h2>
+        <hr>
+        <p>Select the location where your headache started. You can update the location before final confirmation.</p>
+    </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <a href="#userLocationPanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1>Physical Location</h1>
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="fixed">
+        <div class="ui-loader-background"></div>
+
+        <div class="ui-grid-solo">
+            <div class="ui-block-a" id="location-header"><p>Where were you when headache started?</p></div>
+        </div>
+
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="home-block">
+                <img id="home-icon" src="img/home-icon.png" class="app-theme-none">
+            </div>
+            <div class="ui-block-b" id="office-block">
+                <img id="office-icon" src="img/office-icon.png" class="app-theme-none">
+            </div>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="at-home-text">Home</div>
+            <div class="ui-block-b" id="at-work-text">Work</div>
+        </div>
+
+        <br/>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="school-block">
+                <img id="school-icon" src="img/school-icon.png" class="app-theme-none">
+            </div>
+            <div class="ui-block-b" id="park-block">
+                <img id="park-icon" src="img/park-icon.png" class="app-theme-none">
+            </div>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="at-school-text">School</div>
+            <div class="ui-block-b" id="at-park-text">Park</div>
+        </div>
+
+        <br />
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="transit-block">
+                <img id="transit-icon" src="img/transit-icon.png" class="app-theme-none">
+            </div>
+            <div class="ui-block-b" id="party-block">
+                <img id="party-icon" src="img/party-icon.png" class="app-theme-none">
+            </div>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="at-transit-text">Transit</div>
+            <div class="ui-block-b" id="at-party-text">Party</div>
+        </div>
+
+        <br />
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="stadium-block">
+                <img id="stadium-icon" src="img/stadium-icon.png" class="app-theme-none">
+            </div>
+            <div class="ui-block-b" id="shopping-block">
+                <img id="shopping-icon" src="img/shopping-icon.png" class="app-theme-none">
+            </div>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="at-stadium-text">Playground</div>
+            <div class="ui-block-b" id="at-shopping-text">Shopping Center</div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" id="userloc-back" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top" onclick="updateUserLocationData('headache')">Come Back later</a></li>
+                <li><a href="#" id="userloc-skip" data-prefetch="true" class="ui-icon-arrow-r ui-btn-icon-top" onclick="updateUserLocationData('headache')">Skip to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,98 @@
+
+<div data-role="page" id="startTime" data-dom-cache="true">
+
+    <script>
+        $(document).delegate("#startTime", "pageshow", function(inEvent) {
+            pageShowHandler("starttime");
+        });
+
+    </script>
+
+
+
+    <!-- Settings Panel -->
+        <div data-role="panel" data-position="right" data-display="overlay" id="startTimePanel" data-theme="a">
+            <h2>Set Headache Start Time</h2>
+            <hr>
+            <p>Headache Tracker application assumes by default that your headache has just started. That is why "Just Started" icon is selected by default.</p>
+            <p>If your headache started at an earlier time, please select or input that time using other icons or by tapping on the time or date.</p>
+            <p>If you make an error while entering data don't worry. You can review and update any entry before final confirmation.</p>
+        </div>
+
+    <!-- Header. -->
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-loader-background"></div>
+        <a href="#startTimePanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+        <h1>Start Time</h1>
+       <!-- <a href="#settingsPanel" data-theme="a" class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext">Settings</a> -->
+
+    </div>
+
+    <!-- Page content. -->
+    <div data-role="content" data-position="relative">
+        <div class="ui-loader-background"></div> <br />
+
+        <div class="ui-grid-b ui-corner-all" data-theme="a">
+            <div class="ui-block-a header-block"><p>Start Time</p></div>
+            <div class="ui-block-b time-block" id="start-show-time"><p></p></div>
+            <div class="ui-block-c date-block" id="start-show-date"><p></p></div>
+        </div> <br /> <br />
+
+        <div class="ui-grid-a start-time-option">
+            <div class="ui-block-a just-started">
+                <button data-theme="a" id="start-justStarted" class="ui-btn ui-btn-active ui-shadow ui-corner-all ui-icon-clock ui-btn-icon-notext ui-btn-inline"></button>
+            </div>
+            <div class="ui-block-b ten-minutes">
+                <button data-theme="a" id="start-tenMinutes" class="ui-btn ui-shadow ui-corner-all ui-icon-clock ui-btn-icon-notext ui-btn-inline"></button>
+            </div>
+
+        </div>
+
+        <div class="ui-grid-a start-time-option">
+            <div class="ui-block-a just-started" id="start-just-started-text">Just Started</div>
+            <div class="ui-block-b ten-minutes" id="start-ten-minutes-text">10 Minutes Ago</div>
+        </div>
+
+        <br />
+
+        <div class="ui-grid-a start-time-option">
+            <div class="ui-block-a twenty-minutes">
+                <button data-theme="a" id="start-twentyMinutes" class="ui-btn ui-shadow ui-corner-all ui-icon-clock ui-btn-icon-notext ui-btn-inline"></button>
+            </div>
+            <div class="ui-block-b thirty-minutes">
+                <button data-theme="a" id="start-thirtyMinutes" class="ui-btn ui-shadow ui-corner-all ui-icon-clock ui-btn-icon-notext ui-btn-inline"></button>
+            </div>
+        </div>
+
+        <div class="ui-grid-a start-time-option">
+            <div class="ui-block-a twenty-minutes" id="start-twenty-minutes-text">20 Minutes Ago</div>
+            <div class="ui-block-b thirty-minutes" id="start-thirty-minutes-text">30 Minutes Ago</div>
+        </div>
+
+        <br />
+
+        <div class="ui-grid-solo start-time-option">
+            <div class="ui-block-a user-minutes">
+                <button data-theme="a" id="start-userMinutes" class="ui-btn ui-shadow ui-corner-all ui-icon-clock ui-btn-icon-notext ui-btn-inline"></button>
+            </div>
+        </div>
+        <div class="ui-grid-solo start-time-option">
+            <div class="ui-block-a user-minutes" id="start-user-minutes-text">Input Time</div>
+        </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-position="fixed" id="test">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" id="start-not-now" data-prefetch="true" data-icon="clock" class="ui-btn-icon-top" onclick="updateStartTimeData('headache')">Come Back Later</a></li>
+                <li><a href="endTime.html" id="start-skip" data-prefetch="true"  data-icon="arrow-r" class="ui-btn-icon-top" onclick="updateStartTimeData('headache')">Go to Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
